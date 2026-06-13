@@ -1,0 +1,10 @@
+const menuBtn=document.getElementById('menuBtn');const menu=document.getElementById('menu');
+menuBtn?.addEventListener('click',()=>menu.classList.toggle('active'));
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{topBtn.style.display=window.scrollY>300?'block':'none';});
+topBtn?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+let count=0;const counter=document.getElementById('scoreCounter');
+const interval=setInterval(()=>{count+=137;if(counter)counter.textContent=count.toLocaleString();if(count>=50000)clearInterval(interval)},30);
+const modal=document.getElementById('modal');const modalImg=document.getElementById('modalImg');
+document.querySelectorAll('.gallery-img').forEach(img=>img.addEventListener('click',()=>{modal.style.display='flex';modalImg.src=img.src;}));
+modal?.addEventListener('click',()=>modal.style.display='none');
